@@ -1,0 +1,19 @@
+.banner{
+    background: url("../images/banner/public/xl.JPG"); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .banner {
+        background-image: url('../images/banner/public/lg.JPG');
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        background-image: url('../images/banner/public/sm.png');
+        background-position: bottom;
+    }
+}
