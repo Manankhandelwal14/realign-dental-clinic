@@ -10,10 +10,7 @@ Route::get('/home', function () {
 
 
 // public routes
-Route::get('/', function () {
-    return Inertia::render('errors/under-construction');
-});
-
+Route::get('/', [PublicController::class, 'home'])->name('public.index');
 
 // Route::get('/', [PublicController::class, 'home'])->name('public.index');
 Route::get('/about', [PublicController::class, 'about'])->name('public.about');
@@ -45,7 +42,7 @@ Route::get('/branches/{slug}', [PublicController::class, 'branch'])->name('publi
 // faqs
 Route::get('/faqs', [PublicController::class, 'faqs'])->name('public.faqs');
 Route::get('/gallery', [PublicController::class, 'gallery'])->name('public.gallery');
-// patient safety
+// patient safetyOA
 Route::prefix('patient-safety')->name('public.patient-safety.')->group(function () {
     Route::view('/10x-safety', 'public.patient-safety.10x-safety')->name('10x-safety');
     Route::view('/sterilization', 'public.patient-safety.sterilization')->name('sterilization');
